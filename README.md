@@ -1,6 +1,6 @@
 # TradeLens 🌍📊
 
-*Interactive dashboard analyzing global trade patterns and socioeconomic development*
+*Interactive dashboard for comparing global trade patterns and socioeconomic development*
 
 ## Overview
 
