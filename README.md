@@ -4,7 +4,7 @@
 
 ## Overview
 
-TradeLens reveals how national development influences global purchasing patterns across 200+ countries. Data retrieved from DataCo Global's Supply Chain Dataset and World GeoData 2023 incorporated into choropleth maps, parallel coordinates, scatterplots, and k-means clustering analysis.
+TradeLens reveals how national development influences global purchasing patterns across 200+ countries. Data retrieved from [DataCo Global's Supply Chain Dataset]([url](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis)) and [World GeoData 2023]([url](https://github.com/georgique/world-geojson)) incorporated into choropleth maps, parallel coordinates, scatterplots, and k-means clustering analysis.
 
 ![Dashboard Overview](screenshots/dashboard-overview.png)
 
