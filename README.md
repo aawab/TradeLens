@@ -1,12 +1,38 @@
-# CSE564 Final Project
+# TradeLens 🌍📊
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+*Interactive dashboard analyzing global trade patterns and socioeconomic development*
 
-## Available Scripts
+## Overview
 
-In the project directory, you can run:
+TradeLens reveals how national development influences global purchasing patterns across 200+ countries. Data retrieved from DataCo Global's Supply Chain Dataset and World GeoData 2023 incorporated into choropleth maps, parallel coordinates, scatterplots, and k-means clustering analysis.
 
-### `npm start`
+![Dashboard Overview](screenshots/dashboard-overview.png)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 📊 Data Sources
+
+- **DataCo Global Supply Chain**: Customer purchases, orders, delivery data, and department classifications
+- **World GeoData 2023**: GDP, CO2 emissions, population, life expectancy for all countries
+
+## 🚀 Key Discoveries
+
+- **Technology & Wealth**: Strong correlation between high GDP countries (USA, Russia) and technology purchases
+- **Population & Clothing**: High-population nations (China, India) dominate clothing sector activity  
+- **Environment & Health**: Inverse relationship between CO2 emissions and life expectancy
+
+![Key Findings](screenshots/key-findings.png)
+
+## 🛠️ Getting Started
+
+```bash
+git clone https://github.com/aawab/TradeLens.git
+cd TradeLens
+python -m http.server 8000  # Visit http://localhost:8000
+```
+
+## 📄 License
+
+MIT License - see [LICENSE](LICENSE) for details.
+
+---
+
+*Connecting global trade patterns with socioeconomic insights* ✨
