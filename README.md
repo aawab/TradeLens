@@ -26,8 +26,13 @@ TradeLens reveals how national development influences global purchasing patterns
 ```bash
 git clone https://github.com/aawab/TradeLens.git
 cd TradeLens
-python -m http.server 8000  # Visit http://localhost:8000
+
+`npm start`
+
 ```
+Runs the app in the development mode.
+
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 ## 📄 License
 
