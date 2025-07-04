@@ -139,10 +139,6 @@ npm run lint         # Run TypeScript/ESLint checks
 4. Push to branch: `git push origin feature/amazing-feature`
 5. Open Pull Request
 
-## 📄 License
-
-This project is licensed under the MIT License.
-
 ## 🙏 Acknowledgments
 
 - **D3.js** for powerful data visualization capabilities
