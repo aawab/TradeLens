@@ -13,27 +13,27 @@ WorldLens reveals how national development influences socioeconomic patterns acr
 ### 📍 **Interactive World Map**
 Explore country development metrics with dynamic choropleth visualization featuring GDP, population, life expectancy, and CO2 emissions data.
 
-![World Heatmap](./public/WorldLens-%20World%20Heatmap.png)
+![World Heatmap](./public/TradeLens-%20World%20Heatmap.png)
 
 ### 📈 **Scatter Plot Analysis**
 Discover correlations between socioeconomic indicators with interactive scatter plots supporting dynamic variable selection and country filtering.
 
-![Scatter Plot](./public/WorldLens%20-%20Scatter.png)
+![Scatter Plot](./public/TradeLens%20-%20Scatter.png)
 
 ### 🎯 **Parallel Coordinates Plot**
 Analyze multi-dimensional relationships across development indicators with interactive parallel coordinates visualization.
 
-![Parallel Coordinates](./public/WorldLens%20-%20PCP.png)
+![Parallel Coordinates](./public/TradeLens%20-%20PCP.png)
 
 ### 🤖 **K-Means Clustering**
 Machine learning-powered country clustering with elbow method optimization and MSE analysis for pattern discovery.
 
-![K-Means Clustering](./public/WorldLens%20-%20MSE.png)
+![K-Means Clustering](./public/TradeLens%20-%20MSE.png)
 
 ### 🎛️ **State Management**
 Reactive state management with Zustand for seamless data filtering and component synchronization.
 
-![State Management](./public/WorldLens%20-%20State.png)
+![State Management](./public/TradeLens%20-%20State.png)
 
 ## 📊 Data Sources
 
@@ -83,7 +83,7 @@ cd backend
 npm install
 
 # Set up environment variables
-cp .env.example .env
+code .env
 # Edit .env with your PostgreSQL credentials
 
 # Start backend server
@@ -123,14 +123,6 @@ npm run preview      # Preview production build
 npm run lint         # Run TypeScript/ESLint checks
 ```
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch: `git checkout -b feature/amazing-feature`
-3. Commit changes: `git commit -m 'Add amazing feature'`
-4. Push to branch: `git push origin feature/amazing-feature`
-5. Open Pull Request
-
 ## 🙏 Acknowledgments
 
 - **D3.js** for powerful data visualization capabilities
@@ -139,5 +131,3 @@ npm run lint         # Run TypeScript/ESLint checks
 - **Zustand** for simple, effective state management
 
 ---
-
-*Explore the intersection of global economy and development with WorldLens* 🌍✨
