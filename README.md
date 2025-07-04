@@ -6,7 +6,7 @@
 
 WorldLens reveals how national development influences socioeconomic patterns across 155+ countries. Data retrieved from [World GeoData 2023](https://github.com/georgique/world-geojson) incorporated into choropleth maps, parallel coordinates, scatterplots, and k-means clustering analysis.
 
-![WorldLens Dashboard](./public/WorldLens%20-%20Dashboard.png)
+![WorldLens Dashboard](./public/TradeLens%20-%20Dashboard.png)
 
 ## 🌟 Features
 
