@@ -1,49 +1,42 @@
-# TradeLens 🔎📊
+# WorldLens 🔎📊
 
-*Interactive dashboard for comparing global trade patterns and socioeconomic development*
+*Interactive dashboard for comparing socioeconomic development across 155+ countries*
 
 ## Overview
 
-TradeLens reveals how national development influences global purchasing patterns across 200+ countries. Data retrieved from [DataCo Global's Supply Chain Dataset](https://www.kaggle.com/datasets/shashwatwork/dataco-smart-supply-chain-for-big-data-analysis) and [World GeoData 2023](https://github.com/georgique/world-geojson) incorporated into choropleth maps, parallel coordinates, scatterplots, and k-means clustering analysis.
+WorldLens reveals how national development influences socioeconomic patterns across 155+ countries. Data retrieved from [World GeoData 2023](https://github.com/georgique/world-geojson) incorporated into choropleth maps, parallel coordinates, scatterplots, and k-means clustering analysis.
 
-![TradeLens Dashboard](./public/TradeLens%20-%20Dashboard.png)
-
-## 🚀 Key Discoveries
-
-- **Technology & Wealth**: Strong correlation between high GDP countries (USA, Russia) and technology purchases
-- **Population & Clothing**: High-population nations (China, India) dominate clothing sector activity  
-- **Environment & Health**: Inverse relationship between CO2 emissions and life expectancy
+![WorldLens Dashboard](./public/WorldLens%20-%20Dashboard.png)
 
 ## 🌟 Features
 
 ### 📍 **Interactive World Map**
 Explore country development metrics with dynamic choropleth visualization featuring GDP, population, life expectancy, and CO2 emissions data.
 
-![World Heatmap](./public/TradeLens-%20World%20Heatmap.png)
+![World Heatmap](./public/WorldLens-%20World%20Heatmap.png)
 
 ### 📈 **Scatter Plot Analysis**
 Discover correlations between socioeconomic indicators with interactive scatter plots supporting dynamic variable selection and country filtering.
 
-![Scatter Plot](./public/TradeLens%20-%20Scatter.png)
+![Scatter Plot](./public/WorldLens%20-%20Scatter.png)
 
 ### 🎯 **Parallel Coordinates Plot**
 Analyze multi-dimensional relationships across development indicators with interactive parallel coordinates visualization.
 
-![Parallel Coordinates](./public/TradeLens%20-%20PCP.png)
+![Parallel Coordinates](./public/WorldLens%20-%20PCP.png)
 
 ### 🤖 **K-Means Clustering**
 Machine learning-powered country clustering with elbow method optimization and MSE analysis for pattern discovery.
 
-![K-Means Clustering](./public/TradeLens%20-%20MSE.png)
+![K-Means Clustering](./public/WorldLens%20-%20MSE.png)
 
 ### 🎛️ **State Management**
 Reactive state management with Zustand for seamless data filtering and component synchronization.
 
-![State Management](./public/TradeLens%20-%20State.png)
+![State Management](./public/WorldLens%20-%20State.png)
 
 ## 📊 Data Sources
 
-- **DataCo Global Supply Chain**: Customer purchases, orders, delivery data, and department classifications
 - **World GeoData 2023**: GDP, CO2 emissions, population, life expectancy for all countries
 
 ## 🛠️ Tech Stack
@@ -63,14 +56,13 @@ Reactive state management with Zustand for seamless data filtering and component
 ### **Analytics**
 - **Scikit-learn**: Machine learning algorithms (K-means clustering)
 - **Python**: Data processing and analysis
-- **FastAPI**: High-performance API framework (planned)
 
 ## 🚀 Getting Started
 
 ```bash
 # Clone the repository
-git clone https://github.com/aawab/TradeLens.git
-cd TradeLens
+git clone https://github.com/aawab/WorldLens.git
+cd WorldLens
 
 # Install dependencies
 npm install
@@ -101,7 +93,7 @@ npm run dev
 ## 📁 Project Structure
 
 ```
-TradeLens/
+WorldLens/
 ├── frontend/
 │   ├── components/          # Interactive visualization components
 │   │   ├── BarChart.tsx    # K-means MSE visualization
@@ -148,4 +140,4 @@ npm run lint         # Run TypeScript/ESLint checks
 
 ---
 
-*Explore the intersection of global trade and development with TradeLens* 🌍✨
+*Explore the intersection of global economy and development with WorldLens* 🌍✨
