@@ -1,0 +1,516 @@
+/* Modern responsive design for TradeLens with complementary color palette */
+
+/* CSS Custom Properties - Blue-Orange Complementary Palette */
+:root {
+  /* Primary Colors (Complementary) */
+  --primary-blue: #1E3A8A;
+  --primary-orange: #EA580C;
+  
+  /* Secondary Colors */
+  --secondary-blue: #3B82F6;
+  --secondary-orange: #FB923C;
+  
+  /* Accent Colors */
+  --accent-teal: #0891B2;
+  --accent-coral: #F97316;
+  
+  /* Neutral Colors */
+  --text-dark: #1F2937;
+  --text-medium: #374151;
+  --text-light: #6B7280;
+  --text-white: #FFFFFF;
+  
+  /* Background Colors */
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #E5E7EB;
+  --bg-paper: #FFFFFF;
+  --bg-accent: linear-gradient(135deg, var(--primary-blue) 0%, var(--accent-teal) 100%);
+  
+  /* Border Colors */
+  --border-light: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --border-dark: #9CA3AF;
+  
+  /* Shadow Colors */
+  --shadow-light: rgba(30, 58, 138, 0.1);
+  --shadow-medium: rgba(30, 58, 138, 0.15);
+  --shadow-dark: rgba(30, 58, 138, 0.25);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, #EFF6FF 100%);
+  display: flex;
+  flex-direction: column;
+  color: var(--text-dark);
+}
+
+/* Modern header with enhanced visual design */
+.app-header {
+  background: var(--bg-accent);
+  padding: clamp(1rem, 3vw, 2rem) clamp(1rem, 4vw, 3rem);
+  width: 100%;
+  box-shadow: 0 8px 32px var(--shadow-medium);
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.app-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 200%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.08) 50%, transparent 70%);
+  pointer-events: none;
+  animation: shimmer 6s ease-in-out infinite;
+}
+
+.app-header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(234, 88, 12, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.app-title-container {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.app-title {
+  color: #ffffff !important;
+  font-size: clamp(1.5rem, 5vw, 3rem) !important;
+  font-weight: 800 !important;
+  margin: 0 !important;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  letter-spacing: clamp(-0.5px, 0.5vw, 1px) !important;
+  line-height: 1.1 !important;
+  animation: titleGlow 3s ease-in-out infinite alternate;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 2vw, 1rem);
+}
+
+.app-subtitle {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: clamp(0.8rem, 2vw, 1.1rem) !important;
+  font-weight: 400 !important;
+  margin: clamp(0.25rem, 1vw, 0.5rem) 0 0 0 !important;
+  letter-spacing: clamp(0.5px, 1vw, 2px) !important;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+.app-header-icon {
+  display: inline-block;
+  font-size: clamp(1.2rem, 3vw, 2rem);
+  opacity: 0.95;
+  animation: iconFloat 4s ease-in-out infinite;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Elegant animations */
+@keyframes shimmer {
+  0%, 100% { transform: translateX(-50%); }
+  50% { transform: translateX(0%); }
+}
+
+@keyframes titleGlow {
+  0% { text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); }
+  100% { text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 24px rgba(255, 255, 255, 0.2); }
+}
+
+@keyframes iconFloat {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-3px); }
+}
+
+/* Main container with enhanced styling */
+.main-container {
+  flex: 1;
+  padding: clamp(0.5rem, 2vw, 2rem);
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+/* Responsive grid system */
+.visualization-grid {
+  display: grid;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+}
+
+/* Top row: Map (larger) + Scatter Plot (smaller) */
+.top-row {
+  grid-template-columns: 1fr;
+  grid-template-areas: 
+    "map"
+    "scatter";
+}
+
+/* Bottom row: PCP (larger) + Bar Chart (smaller) */
+.bottom-row {
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "pcp"
+    "bar";
+}
+
+/* Responsive breakpoints */
+@media (min-width: 768px) {
+  .top-row {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "map scatter";
+  }
+  
+  .bottom-row {
+    grid-template-columns: 2fr 1fr;
+    grid-template-areas: "pcp bar";
+  }
+}
+
+@media (min-width: 1200px) {
+  .top-row {
+    grid-template-columns: 3fr 2fr;
+  }
+  
+  .bottom-row {
+    grid-template-columns: 3fr 2fr;
+  }
+}
+
+/* Grid item areas */
+.map-section { grid-area: map; }
+.scatter-section { grid-area: scatter; }
+.pcp-section { grid-area: pcp; }
+.bar-section { grid-area: bar; }
+
+/* Enhanced paper containers with beautiful styling */
+.viz-paper {
+  padding: clamp(0.75rem, 2vw, 1.5rem) !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  background: var(--bg-paper) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 20px var(--shadow-light), 0 1px 3px var(--shadow-medium) !important;
+  transition: all 0.3s ease !important;
+  position: relative;
+  overflow: hidden;
+}
+
+.viz-paper::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary-blue), var(--secondary-blue), var(--accent-teal), var(--primary-orange));
+}
+
+.viz-paper:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 32px var(--shadow-medium), 0 2px 8px var(--shadow-dark) !important;
+}
+
+.viz-title {
+  font-size: clamp(1rem, 2.5vw, 1.4rem) !important;
+  margin-bottom: clamp(0.5rem, 1vw, 1rem) !important;
+  color: var(--text-dark) !important;
+  font-weight: 700 !important;
+  position: relative;
+  padding-top: 0.5rem;
+  letter-spacing: 0.5px !important;
+  text-transform: capitalize !important;
+}
+
+/* Responsive component containers */
+.viz-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0; /* Important for flex shrinking */
+}
+
+/* SVG responsive containers */
+.responsive-svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Map specific responsive sizing */
+.map-container {
+  width: 100%;
+  height: clamp(300px, 50vh, 600px);
+}
+
+.map-container svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Scatter plot responsive sizing - extended vertically */
+.scatter-container {
+  width: 100%;
+  height: clamp(350px, 55vh, 600px);
+}
+
+.scatter-container svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* PCP responsive sizing */
+.pcp-container {
+  width: 100%;
+  height: clamp(300px, 45vh, 500px);
+  overflow-x: auto; /* Allow horizontal scroll if needed */
+}
+
+.pcp-container svg {
+  width: 100% !important;
+  height: 100% !important;
+  min-width: 600px; /* Minimum width for PCP readability */
+}
+
+/* Bar chart responsive sizing */
+.bar-container {
+  width: 100%;
+  height: clamp(250px, 35vh, 350px);
+}
+
+.bar-container svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Enhanced controls styling */
+.control-section {
+  margin-top: auto;
+  padding-top: clamp(0.5rem, 1vw, 1rem);
+  border-top: 1px solid var(--border-light);
+  background: linear-gradient(180deg, transparent 0%, var(--bg-primary) 100%);
+  border-radius: 0 0 8px 8px;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  margin-bottom: -1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+}
+
+.radio-group {
+  justify-content: center !important;
+  gap: clamp(0.5rem, 1vw, 1rem) !important;
+}
+
+.form-control-small {
+  min-width: clamp(120px, 20vw, 200px) !important;
+  border: 2px solid var(--border-medium) !important;
+  border-radius: 8px !important;
+  background: var(--bg-paper) !important;
+  color: var(--text-dark) !important;
+  transition: all 0.2s ease !important;
+}
+
+.form-control-small:focus {
+  border-color: var(--primary-blue) !important;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1) !important;
+  outline: none !important;
+}
+
+/* Enhanced info sections */
+.info-section {
+  margin-top: clamp(1rem, 2vw, 2rem);
+  padding: clamp(0.5rem, 1vw, 1rem) !important;
+  background: linear-gradient(135deg, var(--bg-paper) 0%, var(--bg-primary) 100%) !important;
+  border: 1px solid var(--border-light) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 12px var(--shadow-light) !important;
+}
+
+.info-title {
+  font-size: clamp(0.9rem, 2vw, 1.1rem) !important;
+  color: var(--primary-blue) !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.3px !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.info-text {
+  font-size: clamp(0.8rem, 1.5vw, 0.95rem) !important;
+  line-height: 1.7;
+  color: var(--text-medium) !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1px !important;
+}
+
+/* Loading and error states with themed colors */
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: clamp(200px, 30vh, 300px);
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+/* Mobile optimizations */
+@media (max-width: 767px) {
+  .viz-paper {
+    margin-bottom: 1rem !important;
+    border-radius: 8px !important;
+  }
+  
+  .radio-group {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  
+  .form-control-small {
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Stack controls vertically on mobile */
+  .scatter-controls {
+    flex-direction: column !important;
+    gap: 0.5rem !important;
+  }
+}
+
+/* Enhanced tooltip styling */
+.tooltip {
+  font-size: clamp(0.7rem, 1.5vw, 0.9rem) !important;
+  max-width: clamp(200px, 50vw, 300px);
+  word-wrap: break-word;
+  background: var(--text-dark) !important;
+  color: var(--text-white) !important;
+  border: 1px solid var(--border-dark) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 4px 20px var(--shadow-dark) !important;
+}
+
+/* Enhanced Material-UI Component Styling */
+.MuiRadio-root.Mui-checked {
+  color: var(--primary-blue) !important;
+}
+
+.MuiRadio-root:hover {
+  background-color: rgba(30, 58, 138, 0.04) !important;
+}
+
+.MuiFormControlLabel-label {
+  color: var(--text-medium) !important;
+  font-weight: 500 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.2px !important;
+}
+
+.MuiInputLabel-root {
+  color: var(--text-medium) !important;
+  font-weight: 500 !important;
+}
+
+.MuiInputLabel-root.Mui-focused {
+  color: var(--primary-blue) !important;
+}
+
+.MuiOutlinedInput-root {
+  border-radius: 8px !important;
+}
+
+.MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: var(--secondary-blue) !important;
+}
+
+.MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: var(--primary-blue) !important;
+  border-width: 2px !important;
+}
+
+.MuiMenuItem-root:hover {
+  background-color: rgba(30, 58, 138, 0.08) !important;
+}
+
+.MuiMenuItem-root.Mui-selected {
+  background-color: rgba(30, 58, 138, 0.12) !important;
+  color: var(--primary-blue) !important;
+  font-weight: 600 !important;
+}
+
+.MuiCircularProgress-root {
+  color: var(--primary-blue) !important;
+}
+
+.MuiAlert-root {
+  border-radius: 8px !important;
+  border-left: 4px solid var(--primary-orange) !important;
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, var(--primary-blue), var(--secondary-blue));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, var(--accent-teal), var(--primary-blue));
+}
+
+/* Print optimizations with color preservation */
+@media print {
+  .App {
+    background: white !important;
+  }
+  
+  .app-header {
+    background: var(--primary-blue) !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .viz-paper {
+    border: 2px solid var(--border-medium) !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+  
+  .viz-paper::before {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
