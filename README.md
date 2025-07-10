@@ -122,12 +122,4 @@ npm run build        # Build for production
 npm run preview      # Preview production build
 npm run lint         # Run TypeScript/ESLint checks
 ```
-
-## 🙏 Acknowledgments
-
-- **D3.js** for powerful data visualization capabilities
-- **Material-UI** for beautiful, accessible components
-- **React & TypeScript** for robust frontend development
-- **Zustand** for simple, effective state management
-
 ---
